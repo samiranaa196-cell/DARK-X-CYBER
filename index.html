@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DARK X CYBER</title>
-  <link rel="stylesheet" href="style.css">
+<title>Mine By Sam</title>
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+  background:#87ceeb;
+}
+canvas{
+  display:block;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>DARK X CYBER</h1>
-  <p>Welcome to my project</p>
+<canvas id="game"></canvas>
 
-  <script src="script.js"></script>
+<script>
+let canvas=document.getElementById("game");
+let ctx=canvas.getContext("2d");
+
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let blocks=[];
+
+for(let x=0;x<10;x++){
+  for(let y=0;y<5;y++){
+    blocks.push({x:x*50,y:canvas.height-50-y*50});
+  }
+}
+
+function draw(){
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ blocks.forEach(b=>{
+   ctx.fillStyle="#4CAF50";
+   ctx.fillRect(b.x,b.y,50,50);
+   ctx.strokeStyle="black";
+   ctx.strokeRect(b.x,b.y,50,50);
+ });
+
+ requestAnimationFrame(draw);
+}
+
+draw();
+</script>
 
 </body>
 </html>
