@@ -1,1 +1,1 @@
-console.log("DARK X CYBER Loaded!");
+alert("Welcome to DARK X CYBER");
