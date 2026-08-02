@@ -1,11 +1,5 @@
-document.body.innerHTML += `
-<div class="box">
-<h2>DARK X CYBER</h2>
-<p>System Online ⚡</p>
-<button onclick="startGame()">START GAME</button>
-</div>
-`;
+console.log("DARK X CYBER Started");
 
-function startGame() {
-  alert("Game Loading...");
-}
+let message = "Welcome to DARK X CYBER";
+
+document.title = message;
